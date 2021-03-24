@@ -1,21 +1,19 @@
-import React from 'react'
-import { Container } from '@material-ui/core'
-import Footer from '../Footer'
-import Header from '../Header'
-import './style.sass'
+import React from "react";
+import { Container } from "@material-ui/core";
+import Footer from "../Footer";
+import Header from "../Header";
+import "./style.sass";
 
 export default function Layout(props) {
-	const { children } = props
+  const { children } = props;
 
-	return (
-		<div>
-			<Header />
-			
-			<Container maxWidth="lg">
-				{children}
-			</Container>
+  return (
+    <div>
+      <Header />
 
-			<Footer />
-		</div>
-	)
+      <Container maxWidth="lg">{children}</Container>
+
+      <Footer />
+    </div>
+  );
 }

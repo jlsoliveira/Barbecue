@@ -2,14 +2,14 @@ import { React, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { object, string, date} from "yup";
+import { object, string, date } from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import { parseDateString } from "../../helpers/DateValidations.js";
 import { Alert, AlertTitle } from "@material-ui/lab";
 import Collapse from "@material-ui/core/Collapse";
-import moment from 'moment'
+import moment from "moment";
 
 import Layout from "../../components/Layout";
 import "./style.sass";
@@ -38,14 +38,18 @@ const NewBarbecue = (props) => {
     title: "",
     description: "",
     observation: "",
-    date: moment().format('YYYY-MM-DD')
-  }
+    date: moment().format("YYYY-MM-DD"),
+  };
 
   const schema = object().shape({
     title: string().required("O evento é obrigatório!"),
     description: string(),
     observation: string(),
-    date: date().transform(parseDateString).required("A data é obrigatória!").nullable(true).default(undefined),
+    date: date()
+      .transform(parseDateString)
+      .required("A data é obrigatória!")
+      .nullable(true)
+      .default(undefined),
     contributionWithBear: string().required(
       "O Valor por participante com bebida é obrigatório!"
     ),
@@ -91,7 +95,7 @@ const NewBarbecue = (props) => {
   };
 
   const onError = (errors, e) => {
-    console.log(errors, e)
+    console.log(errors, e);
   };
 
   return redirect ? (
@@ -109,7 +113,9 @@ const NewBarbecue = (props) => {
                 Evento:
                 <input type="text" id="title" name="title" ref={register} />
               </label>
-              {errors.title && <p className="error">{errors.title.message || "Requerido"}</p>}
+              {errors.title && (
+                <p className="error">{errors.title.message || "Requerido"}</p>
+              )}
             </div>
             <div className="form-group">
               <label htmlFor="description">Descrição</label>
@@ -184,11 +190,10 @@ const NewBarbecue = (props) => {
               </div>
             </div>
             <div className="form-group form-group-submit">
-
               <Link to="/churrascos/">
                 <button type="button" className="btn-default btn-cancel">
                   Cancelar
-              </button>
+                </button>
               </Link>
               <button type="submit" className="btn-default">
                 Salvar

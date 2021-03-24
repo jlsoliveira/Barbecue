@@ -67,7 +67,11 @@ const Login = (props) => {
                     isinvalid={`${!!errors.email}`}
                     ref={register}
                   />
-                  {errors.email && <p className="error">{errors.email.message || "Requerido"}</p>}
+                  {errors.email && (
+                    <p className="error">
+                      {errors.email.message || "Requerido"}
+                    </p>
+                  )}
                 </div>
                 <div className="form-group">
                   <label htmlFor="password">password:</label>
@@ -81,7 +85,9 @@ const Login = (props) => {
                     ref={register}
                   />
                   {errors.password && (
-                    <p className="error">{errors.password.message || "Requerido"}</p>
+                    <p className="error">
+                      {errors.password.message || "Requerido"}
+                    </p>
                   )}
                 </div>
                 <div className="form-group">

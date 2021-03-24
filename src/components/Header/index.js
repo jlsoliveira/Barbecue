@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 import { Link } from "react-router-dom";
-import './style.sass'
+import "./style.sass";
 
 export default function Header(props) {
   return (
@@ -10,5 +10,5 @@ export default function Header(props) {
         <Link to="/">Sair ➦</Link>
       </div>
     </header>
-  )
+  );
 }

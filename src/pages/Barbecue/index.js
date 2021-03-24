@@ -1,7 +1,7 @@
 import { React, useState, useEffect, createRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import MaterialTable, { MTableToolbar } from "material-table";
-import Dialog from '../../components/Dialog'
+import Dialog from "../../components/Dialog";
 import Checkbox from "@material-ui/core/Checkbox";
 
 import Layout from "../../components/Layout";
@@ -27,7 +27,6 @@ const Barbecue = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [barbecue, participants]);
 
-
   const loadBarbecue = async () => {
     const response = await fetch(`${API}/barbecues/${id}`);
     const data = await response.json();
@@ -36,7 +35,7 @@ const Barbecue = (props) => {
   };
 
   const handleClose = () => {
-    setOpen(false)
+    setOpen(false);
   };
 
   const handleChangeCheckbox = async (e, id) => {
@@ -148,7 +147,7 @@ const Barbecue = (props) => {
               isEditHidden: (rowData) => rowData.name === "status",
               onRowAdd: (newData) =>
                 new Promise(async (resolve, reject) => {
-                  if(newData.fullname && newData.contribution) {
+                  if (newData.fullname && newData.contribution) {
                     let register = [
                       ...participants,
                       {
@@ -161,26 +160,30 @@ const Barbecue = (props) => {
                         ...newData,
                       },
                     ];
-  
+
                     setParticipants(register);
-  
+
                     if (await updateBarbecue({ participants: register })) {
                       tableRef.current && tableRef.current.onQueryChange();
-  
+
                       resolve();
                     } else {
-                      reject()
-                       
-                      setTitle("Erro")
-                      setDescription("Houve um erro inesperado ao tentar salvar o registro, tente novamente mais tarde!")
-                      setOpen(true)
+                      reject();
+
+                      setTitle("Erro");
+                      setDescription(
+                        "Houve um erro inesperado ao tentar salvar o registro, tente novamente mais tarde!"
+                      );
+                      setOpen(true);
                     }
                   } else {
-                    reject()
-                    
-                    setTitle("Validação")
-                    setDescription("É necessário preencher os campos para salvar o registro!")
-                    setOpen(true)
+                    reject();
+
+                    setTitle("Validação");
+                    setDescription(
+                      "É necessário preencher os campos para salvar o registro!"
+                    );
+                    setOpen(true);
                   }
                 }),
               onRowDelete: (oldData) =>
@@ -201,9 +204,11 @@ const Barbecue = (props) => {
                   } else {
                     reject();
 
-                    setTitle("Erro")
-                    setDescription("Houve um erro inesperado ao tentar deletar o registro, tente novamente mais tarde!")
-                    setOpen(true)
+                    setTitle("Erro");
+                    setDescription(
+                      "Houve um erro inesperado ao tentar deletar o registro, tente novamente mais tarde!"
+                    );
+                    setOpen(true);
                   }
                 }),
             }}
@@ -224,7 +229,12 @@ const Barbecue = (props) => {
               },
             }}
           />
-          <Dialog title={title} description={description} open={open} handleClose={handleClose} />
+          <Dialog
+            title={title}
+            description={description}
+            open={open}
+            handleClose={handleClose}
+          />
         </div>
       </main>
     </Layout>

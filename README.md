@@ -74,4 +74,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
+### Endereço da aplicação
+
+http://localhost:3001/login
+
+usuário:trinca@trin.ca
+senha:trinca
+
+OBS: Este usuário pode ser alterado no arquivo db.json, encontrado na pasta mocks
+
 

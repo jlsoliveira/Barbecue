@@ -1,0 +1,36 @@
+{
+  "barbecues": [
+    {
+      "participants": [
+        {
+          "id": 1,
+          "fullname": "Johanna Oliveira",
+          "contribution": "20,00",
+          "tableData": {
+            "id": 0
+          },
+          "status": true
+        },
+        {
+          "id": 2,
+          "fullname": "Hanna Liz",
+          "contribution": "50,00"
+        }
+      ],
+      "id": 1,
+      "title": "Final de Ano",
+      "date": "2021-12-30 12:57:13",
+      "description": "Festa para comemorar o Ano novo",
+      "observation": "usar roupa branca",
+      "contributionWithBear": 50,
+      "contributionWithoutBear": 20
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "trinca@trin.ca",
+      "password": "trinca"
+    }
+  ]
+}

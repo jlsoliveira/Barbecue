@@ -1,0 +1,73 @@
+table
+  thead,tbody
+    th,td
+      &:first-child
+        width: 8px !important
+        max-width: 8px
+      &:nth-child(3)      
+        width: 60px !important
+        text-align: right
+      &:last-child
+        max-width: 8px !important
+      
+  .MuiTableCell-root
+    border-bottom: 1px solid rgb(255 216 54)
+  .MuiTableRow-head
+    display: none
+  .MuiIconButton-colorSecondary:hover,
+  .MuiCheckbox-colorSecondary.Mui-checked:hover
+    background-color: rgb(255 216 54 / 14%)
+  .MuiCheckbox-colorSecondary.Mui-checked
+    color: #ddb409
+  .MuiIconButton-colorInherit
+    color: #cc2323
+.info-flex
+  display: flex
+  justify-content: flex-end
+  border-bottom: 1px dashed #ddd
+  padding: 8px 20px
+  p
+    font-size: 21px
+  p.people
+    background: url(../../assets/images/main/people.svg)no-repeat center left
+    padding: 6px 6px 6px 26px
+    margin-right: 25px
+  p.money,
+  p.money-nobear,
+  p.money-bear
+    background: url(../../assets/images/main/money.svg)no-repeat center left
+    padding: 6px 6px 6px 26px
+  p.money-nobear,
+  p.money-bear
+    font-size: 14px
+    margin-left: 10px
+    font-weight: 600
+.container-detail
+  width: 60%
+  margin: 30px auto
+.money-people
+  font-weight: 600
+  font-size: 16px
+  position: relative
+  width: fit-content
+  margin-left: auto
+  span
+    margin-right: 6px
+    font-size: 20px
+.paid
+  &::after
+    content: " "
+    background: url(../../assets/images/main/row.png)no-repeat center center
+    position: absolute
+    left: 0px
+    width: 102%
+    height: 4px
+    top: 12px
+@media ( max-width: 768px)
+  .container-detail
+    width: auto
+  .MTableToolbar-title-9
+    overflow: inherit !important
+    width: 100%
+    h6
+      white-space: break-spaces !important

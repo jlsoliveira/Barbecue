@@ -189,11 +189,7 @@ const Barbecue = (props) => {
               onRowDelete: (oldData) =>
                 new Promise(async (resolve, reject) => {
                   // eslint-disable-next-line
-                  let register = participants
-                    .map((x) => {
-                      if (x.id !== oldData.id) return x;
-                    })
-                    .filter((x) => !!x);
+                  let register = participants.map((x) => { if (x.id !== oldData.id) return x; }).filter((x) => !!x);
 
                   setParticipants(register);
 
